@@ -2,10 +2,15 @@ import React, { Component } from 'react';
 import './FlashcardPresentation.css';
 
 class FlashcardPresentation extends Component {
+  constructor(props) {
+    super(props);
+
+  }
+
   render() {
     return (
       <div>
-          <h1>FlashcardPresentation</h1>
+        <h2>{this.props.title}</h2>
       </div>
     );
   }
