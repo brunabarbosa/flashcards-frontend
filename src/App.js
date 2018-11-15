@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
-import Dashborad from './dashboard/Dashboard';
-import FlashcardList from './flahcardsList/FlashcardList';
+import MenuComponent from './components/menuComponent/MenuComponent';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Dashborad/>
+        <MenuComponent />
       </div>
     );
   }
