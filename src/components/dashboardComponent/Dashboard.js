@@ -12,8 +12,8 @@ class Dashboard extends Component {
       <div className="Dashboard-content">
         <Container text style={{ marginTop: '7em' }}>
           <Header as='h1' textAlign='center'>Dashboard Title</Header>
-          <Divider />
         </Container>
+        <Divider/>
 
         <FlashcardList />
       </div>
