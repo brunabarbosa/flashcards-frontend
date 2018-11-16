@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Dropdown, Container, Menu } from 'semantic-ui-react'
+import { Button, Segment, Menu } from 'semantic-ui-react'
 
 export default class MenuComponent extends Component {
   state = { activeItem: 'home' }
@@ -11,33 +11,30 @@ export default class MenuComponent extends Component {
 
     return (
       <div>
+        <Segment inverted>
+          <Menu inverted pointing secondary>
+            <Menu.Item name='home' active={activeItem === 'home'} onClick={this.handleItemClick} />
+            <Menu.Item
+              name='messages'
+              active={activeItem === 'messages'}
+              onClick={this.handleItemClick}
+            />
+            <Menu.Item
+              name='friends'
+              active={activeItem === 'friends'}
+              onClick={this.handleItemClick}
+            />
 
-        <Menu fixed='top' inverted>
-          <Container>
-            <Menu.Item as='a' header>
-              Flashcards App
-            </Menu.Item>
-            <Menu.Item as='a'>Home</Menu.Item>
-
-            <Dropdown item simple text='Dashboards'>
-              <Dropdown.Menu>
-                <Dropdown.Item>List Item</Dropdown.Item>
-                <Dropdown.Item>List Item</Dropdown.Item>
-                <Dropdown.Divider />
-                <Dropdown.Header>Header Item</Dropdown.Header>
-                <Dropdown.Item>
-                  <i className='dropdown icon' />
-                  <span className='text'>Submenu</span>
-                  <Dropdown.Menu>
-                    <Dropdown.Item>List Item</Dropdown.Item>
-                    <Dropdown.Item>List Item</Dropdown.Item>
-                  </Dropdown.Menu>
-                </Dropdown.Item>
-                <Dropdown.Item>List Item</Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
-          </Container>
-        </Menu>
+            <Menu.Menu position='right'>
+              <Menu.Item>
+                Login
+              </Menu.Item>
+              <Menu.Item>
+                Sign Up
+              </Menu.Item>
+            </Menu.Menu>
+          </Menu>
+        </Segment>
       </div>
     )
   }
