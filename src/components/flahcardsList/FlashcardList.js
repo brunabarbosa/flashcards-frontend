@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import FlashcardPresentation from '../flashcardPresentation/FlashcardPresentation';
 import {
   Grid,
-  Image,
   Container
 } from 'semantic-ui-react';
 

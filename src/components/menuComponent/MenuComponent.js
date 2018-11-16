@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Menu } from 'semantic-ui-react'
+import { Dropdown, Container, Menu } from 'semantic-ui-react'
 
 export default class MenuComponent extends Component {
   state = { activeItem: 'home' }
@@ -11,20 +11,33 @@ export default class MenuComponent extends Component {
 
     return (
       <div>
-        <Menu>
-          <Menu.Item name='home' active={activeItem === 'home'} onClick={this.handleItemClick} />
-          <Menu.Item
-            name='My Dashboards'
-            active={activeItem === 'messages'}
-            onClick={this.handleItemClick}
-          />
-          <Menu.Menu position='right'>
-            <Menu.Item>
-              <Button primary>Sign up</Button>
-            </Menu.Item>
-          </Menu.Menu>
-        </Menu>
 
+        <Menu fixed='top' inverted>
+          <Container>
+            <Menu.Item as='a' header>
+              Flashcards App
+            </Menu.Item>
+            <Menu.Item as='a'>Home</Menu.Item>
+
+            <Dropdown item simple text='Dashboards'>
+              <Dropdown.Menu>
+                <Dropdown.Item>List Item</Dropdown.Item>
+                <Dropdown.Item>List Item</Dropdown.Item>
+                <Dropdown.Divider />
+                <Dropdown.Header>Header Item</Dropdown.Header>
+                <Dropdown.Item>
+                  <i className='dropdown icon' />
+                  <span className='text'>Submenu</span>
+                  <Dropdown.Menu>
+                    <Dropdown.Item>List Item</Dropdown.Item>
+                    <Dropdown.Item>List Item</Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown.Item>
+                <Dropdown.Item>List Item</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+          </Container>
+        </Menu>
       </div>
     )
   }

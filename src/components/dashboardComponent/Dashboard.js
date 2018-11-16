@@ -10,8 +10,8 @@ class Dashboard extends Component {
   render() {
     return (
       <div className="Dashboard-content">
-        <Container text style={{ marginTop: '3em' }}>
-          <Header as='h1'>Dashboard Title</Header>
+        <Container text style={{ marginTop: '7em' }}>
+          <Header as='h1' textAlign='center'>Dashboard Title</Header>
           <Divider />
         </Container>
 
