@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import {
   Container,
   Dropdown,
-  Image,
   Menu,
 } from 'semantic-ui-react'
+
 export default class MenuComponent extends Component {
   state = {}
 
