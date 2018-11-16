@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import {
   Container,
-  Header
+  Header,
+  Grid,
+  Image
 } from 'semantic-ui-react';
 
 class Dashboard extends Component {
@@ -13,8 +15,47 @@ class Dashboard extends Component {
           <p>This is a basic fixed menu template using fixed size containers.</p>
           <p>
             A text container is used for the main container, which is useful for single column layouts.
-        </p>
+          </p>
+        </Container>
 
+        <Container text style={{ marginTop: '2em' }}>
+          <Grid>
+            <Grid.Row>
+              <Grid.Column width={8}>
+                <Image src='https://react.semantic-ui.com/images/wireframe/paragraph.png' />
+              </Grid.Column>
+              <Grid.Column width={8}>
+                <Image src='https://react.semantic-ui.com/images/wireframe/paragraph.png' />
+              </Grid.Column>
+            </Grid.Row>
+
+            <Grid.Row>
+              <Grid.Column width={8}>
+                <Image src='https://react.semantic-ui.com/images/wireframe/paragraph.png' />
+              </Grid.Column>
+              <Grid.Column width={8}>
+                <Image src='https://react.semantic-ui.com/images/wireframe/paragraph.png' />
+              </Grid.Column>
+            </Grid.Row>
+
+            <Grid.Row>
+              <Grid.Column width={8}>
+                <Image src='https://react.semantic-ui.com/images/wireframe/paragraph.png' />
+              </Grid.Column>
+              <Grid.Column width={8}>
+                <Image src='https://react.semantic-ui.com/images/wireframe/paragraph.png' />
+              </Grid.Column>
+            </Grid.Row>
+
+            <Grid.Row>
+              <Grid.Column width={8}>
+                <Image src='https://react.semantic-ui.com/images/wireframe/paragraph.png' />
+              </Grid.Column>
+              <Grid.Column width={8}>
+                <Image src='https://react.semantic-ui.com/images/wireframe/paragraph.png' />
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
         </Container>
       </div>
     )
