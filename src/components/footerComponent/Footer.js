@@ -6,6 +6,7 @@ import {
   Header,
   List,
   Segment,
+  Button
 } from 'semantic-ui-react'
 
 class Footer extends Component {
@@ -37,10 +38,14 @@ class Footer extends Component {
                 <Grid.Column width={7}>
                   <Header as='h4' inverted>
                     Footer Header
-              </Header>
+                  </Header>
                   <p>
                     Extra space for a call to action inside the footer that could help re-engage users.
-              </p>
+                  </p>
+                  <Button circular color='facebook' icon='facebook' />
+                  <Button circular color='twitter' icon='twitter' />
+                  <Button circular color='linkedin' icon='linkedin' />
+                  <Button circular color='google plus' icon='google plus' />
                 </Grid.Column>
               </Grid.Row>
             </Grid>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Input, Menu, Segment } from 'semantic-ui-react'
+import { Button, Menu } from 'semantic-ui-react'
 
 export default class MenuComponent extends Component {
   state = { activeItem: 'home' }
@@ -19,11 +19,9 @@ export default class MenuComponent extends Component {
             onClick={this.handleItemClick}
           />
           <Menu.Menu position='right'>
-            <Menu.Item
-              name='LogIn'
-              active={activeItem === 'friends'}
-              onClick={this.handleItemClick}
-            />
+            <Menu.Item>
+              <Button primary>Log-in</Button>
+            </Menu.Item>
           </Menu.Menu>
         </Menu>
 
