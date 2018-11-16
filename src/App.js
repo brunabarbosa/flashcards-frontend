@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import './App.css';
 import MenuComponent from './components/menuComponent/MenuComponent';
 import Dashboard from './components/dashboardComponent/Dashboard';
 import Footer from './components/footerComponent/Footer';
+
+import './App.css';
 
 class App extends Component {
   render() {
