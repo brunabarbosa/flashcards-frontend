@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
-import './FlashcardList.css';
 import FlashcardPresentation from '../flashcardPresentation/FlashcardPresentation';
+import {
+  Grid,
+  Image,
+  Container
+} from 'semantic-ui-react';
 
 const flashcardList = [
   {
@@ -32,10 +36,37 @@ class FlashcardList extends Component {
   render() {
 
     const flashcard = flashcardList[0];
-
+    // TODO Component rendering
     return (
       <div>
-        <FlashcardPresentation flashcard />
+        <Container>
+          <Grid>
+            <Grid.Column mobile={16} tablet={8} computer={4}>
+              <FlashcardPresentation />
+            </Grid.Column>
+            <Grid.Column mobile={16} tablet={8} computer={4}>
+              <FlashcardPresentation />
+            </Grid.Column>
+            <Grid.Column mobile={16} tablet={8} computer={4}>
+              <FlashcardPresentation />
+            </Grid.Column>
+            <Grid.Column mobile={16} tablet={8} computer={4}>
+              <FlashcardPresentation />
+            </Grid.Column>
+            <Grid.Column mobile={16} tablet={8} computer={4}>
+              <FlashcardPresentation />
+            </Grid.Column>
+            <Grid.Column mobile={16} tablet={8} computer={4}>
+              <FlashcardPresentation />
+            </Grid.Column>
+            <Grid.Column mobile={16} tablet={8} computer={4}>
+              <FlashcardPresentation />
+            </Grid.Column>
+            <Grid.Column mobile={16} tablet={8} computer={4}>
+              <FlashcardPresentation />
+            </Grid.Column>
+          </Grid>
+        </Container>
       </div >
     );
   }
