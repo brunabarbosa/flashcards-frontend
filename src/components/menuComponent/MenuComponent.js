@@ -20,7 +20,7 @@ export default class MenuComponent extends Component {
           />
           <Menu.Menu position='right'>
             <Menu.Item>
-              <Button primary>Log-in</Button>
+              <Button primary>Sign up</Button>
             </Menu.Item>
           </Menu.Menu>
         </Menu>
