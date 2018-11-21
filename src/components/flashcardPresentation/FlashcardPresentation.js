@@ -1,19 +1,14 @@
 import React, { Component } from 'react';
 import { Card, Icon, Button } from 'semantic-ui-react'
 
-const ipsum = `Lorem ipsum dolor sit amet, 
-consectetur adipiscing elit. Quisque cursus, 
-enim porttitor tincidunt cursus, libero lectus pulvinar justo, 
-ut imperdiet magna leo non massa.`;
-
 class FlashcardPresentation extends Component {
 
   render() {
     return (
-      <div>
+      <div key={this.props.key}>
         <Card>
-          <Card.Content header='Flashcard Title' meta='Created in 08/08/2018'/>
-          <Card.Content description={ipsum} />
+          <Card.Content header={this.props.title} meta={`Created in ${this.props.date}`} />
+          <Card.Content description={this.props.body} />
           <Card.Content extra>
             <Button.Group icon>
               <Button basic color='blue'>

@@ -1,5 +1,8 @@
-import React, { Component } from 'react'
-import { Button, Segment, Menu } from 'semantic-ui-react'
+import React, { Component } from 'react';
+import { Segment, Menu } from 'semantic-ui-react';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
+const About = () => <h2>About</h2>;
 
 export default class MenuComponent extends Component {
   state = { activeItem: 'home' }
