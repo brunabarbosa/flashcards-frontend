@@ -77,8 +77,10 @@ class FlashcardList extends Component {
   componentDidMount() {
     axios.get(`http://localhost:5000/flashcards`)
     .then(res => {
-     // const persons[] = res.data;
-      console.log(res.data);
+      let persons = [];
+      persons = res.data;
+      console.log(persons[0]);
+      this.setState({ flashcardList: persons });
     })
   }
 
