@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import FlashcardPresentation from '../flashcardPresentation/FlashcardPresentation';
 import {
   Grid,
@@ -65,13 +66,20 @@ class FlashcardList extends Component {
     };
 
     this.handleFlashcardDelete = this.handleFlashcardDelete.bind(this);
-
   }
 
   handleFlashcardDelete (flashcardID) {
     const deleteFlashcard = item => item.objectID !== flashcardID;
     const updatedList = this.state.flashcardList.filter(deleteFlashcard);
     this.setState({ flashcardList: updatedList });
+  }
+
+  componentDidMount() {
+    axios.get(`http://localhost:5000/flashcards`)
+    .then(res => {
+     // const persons[] = res.data;
+      console.log(res.data);
+    })
   }
 
 
