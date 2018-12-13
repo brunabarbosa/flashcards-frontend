@@ -69,7 +69,9 @@ class FlashcardList extends Component {
   }
 
   handleFlashcardDelete (flashcardID) {
-    console.log(flashcardID);
+    const deleteFlashcard = item => item.objectID !== flashcardID;
+    const updatedList = this.state.flashcardList.filter(deleteFlashcard);
+    this.setState({ flashcardList: updatedList });
   }
 
 
