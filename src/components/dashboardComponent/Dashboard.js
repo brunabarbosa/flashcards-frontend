@@ -3,7 +3,6 @@ import {
   Container,
   Header,
   Divider,
-  Grid
 } from 'semantic-ui-react';
 import FlashcardList from '../flahcardsList/FlashcardList';
 

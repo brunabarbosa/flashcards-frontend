@@ -3,9 +3,19 @@ import { Card, Icon, Button } from 'semantic-ui-react'
 
 class FlashcardPresentation extends Component {
 
+  constructor(props) {
+    super(props);
+
+    this.handleDelete = this.handleDelete.bind(this);
+  }
+
+  handleDelete() {
+    this.props.onFlashcardDelete(this.props.objectID);
+  }
+
   render() {
     return (
-      <div key={this.props.key}>
+      <div>
         <Card>
           <Card.Content header={this.props.title} meta={`Created in ${this.props.date}`} />
           <Card.Content description={this.props.body} />
@@ -15,7 +25,9 @@ class FlashcardPresentation extends Component {
                 <Icon name='edit' floated='right' />
               </Button>
               <Button basic color='blue'>
-                <Icon name='trash alternate' floated='right' />
+                <Icon name='trash alternate' floated='right' 
+                  onClick={this.handleDelete}
+                />
               </Button>
             </Button.Group>
           </Card.Content>

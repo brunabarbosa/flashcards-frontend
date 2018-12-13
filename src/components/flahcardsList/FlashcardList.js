@@ -63,7 +63,15 @@ class FlashcardList extends Component {
     this.state = {
       flashcardList: flashcardList
     };
+
+    this.handleFlashcardDelete = this.handleFlashcardDelete.bind(this);
+
   }
+
+  handleFlashcardDelete (flashcardID) {
+    console.log(flashcardID);
+  }
+
 
   render() {
     return (
@@ -71,53 +79,20 @@ class FlashcardList extends Component {
         <Container>
           <Grid>
             {this.state.flashcardList.map(flashcardItem =>
-              <Grid.Column mobile={16} tablet={8} computer={4}>
-                <FlashcardPresentation
-                  key={flashcardItem.id}
-                  title={flashcardItem.title}
-                  date={flashcardItem.date}
-                  body={flashcardItem.body}
-                />
+              <Grid.Column key={flashcardItem.objectID} mobile={16} tablet={8} computer={4}>
+                  <FlashcardPresentation
+                    objectID={flashcardItem.objectID}
+                    title={flashcardItem.title}
+                    date={flashcardItem.date}
+                    body={flashcardItem.body}
+                    onFlashcardDelete={this.handleFlashcardDelete}
+                  />
               </Grid.Column>
             )}
           </Grid>
         </Container>
       </div>
     );
-    /* const flashcard = flashcardList[0];
-    // TODO Component rendering
-    return (
-      <div>
-        <Container>
-          <Grid>
-            <Grid.Column mobile={16} tablet={8} computer={4}>
-              <FlashcardPresentation />
-            </Grid.Column>
-            <Grid.Column mobile={16} tablet={8} computer={4}>
-              <FlashcardPresentation />
-            </Grid.Column>
-            <Grid.Column mobile={16} tablet={8} computer={4}>
-              <FlashcardPresentation />
-            </Grid.Column>
-            <Grid.Column mobile={16} tablet={8} computer={4}>
-              <FlashcardPresentation />
-            </Grid.Column>
-            <Grid.Column mobile={16} tablet={8} computer={4}>
-              <FlashcardPresentation />
-            </Grid.Column>
-            <Grid.Column mobile={16} tablet={8} computer={4}>
-              <FlashcardPresentation />
-            </Grid.Column>
-            <Grid.Column mobile={16} tablet={8} computer={4}>
-              <FlashcardPresentation />
-            </Grid.Column>
-            <Grid.Column mobile={16} tablet={8} computer={4}>
-              <FlashcardPresentation />
-            </Grid.Column>
-          </Grid>
-        </Container>
-      </div >
-    ); */
   }
 }
 
