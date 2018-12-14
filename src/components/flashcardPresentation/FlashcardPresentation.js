@@ -17,7 +17,7 @@ class FlashcardPresentation extends Component {
     return (
       <div>
         <Card>
-          <Card.Content header={this.props.title} meta={`Created in ${this.props.date}`} />
+          <Card.Content header={this.props.title} />
           <Card.Content description={this.props.body} />
           <Card.Content extra>
             <Button.Group icon>
