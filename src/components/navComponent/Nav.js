@@ -24,6 +24,8 @@ const styles = {
 
 function Nav(props) {
   const { classes } = props;
+  const { isAuthenticated, login, logout } = props.auth;
+  //const { isAuthenticated, login, logout } = this.props.auth;
   return (
     <div className={classes.root}>
       <AppBar position="static">
@@ -46,8 +48,8 @@ function Nav(props) {
           >
             Home
           </Typography>
-          <Button color="inherit" component={Link} to="/login">
-            Login
+          <Button color="inherit" onClick={isAuthenticated() ? logout : login}>
+            {isAuthenticated() ? "Log Out" : "Log In"}
           </Button>
         </Toolbar>
       </AppBar>
