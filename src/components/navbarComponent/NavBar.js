@@ -34,7 +34,7 @@ function NavBar(props) {
             component={Link}
             to="/"
           >
-            Flashcards App
+            Home
           </Typography>
           <Button color="inherit">Log In</Button>
         </Toolbar>
