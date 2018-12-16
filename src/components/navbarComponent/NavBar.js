@@ -1,50 +1,40 @@
 import React from "react";
-import PropTypes from "prop-types";
-import { withStyles } from "@material-ui/core/styles";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/Button";
-import { Link } from "react-router-dom";
-
-const styles = {
-  root: {
-    flexGrow: 1
-  },
-  grow: {
-    flexGrow: 1
-  },
-  menuButton: {
-    marginLeft: -12,
-    marginRight: 20
-  }
-};
+import { Link, withRouter } from "react-router-dom";
+import auth0Client from "../../auth/Auth";
 
 function NavBar(props) {
-  const { classes } = props;
+  const signOut = () => {
+    auth0Client.signOut();
+    props.history.replace("/");
+  };
 
   return (
-    <div className={classes.root}>
-      <AppBar position="static" color="primary">
-        <Toolbar>
-          <Typography
-            variant="h6"
-            color="inherit"
-            className={classes.grow}
-            component={Link}
-            to="/"
+    <nav className="navbar navbar-dark bg-primary fixed-top">
+      <Link className="navbar-brand" to="/">
+        The flashcards app
+      </Link>
+      {!auth0Client.isAuthenticated() && (
+        <button className="btn btn-dark" onClick={auth0Client.signIn}>
+          Sign In
+        </button>
+      )}
+      {auth0Client.isAuthenticated() && (
+        <div>
+          <label className="mr-2 text-white">
+            {auth0Client.getProfile().name}
+          </label>
+          <button
+            className="btn btn-dark"
+            onClick={() => {
+              signOut();
+            }}
           >
-            Home
-          </Typography>
-          <Button color="inherit">Log In</Button>
-        </Toolbar>
-      </AppBar>
-    </div>
+            Sign Out
+          </button>
+        </div>
+      )}
+    </nav>
   );
 }
 
-NavBar.propTypes = {
-  classes: PropTypes.object.isRequired
-};
-
-export default withStyles(styles)(NavBar);
+export default withRouter(NavBar);

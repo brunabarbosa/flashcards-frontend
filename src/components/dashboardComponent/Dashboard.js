@@ -4,7 +4,7 @@ import FlashcardList from "../flahcardsList/FlashcardList";
 class Dashboard extends Component {
   render() {
     return (
-      <div className="container" style={{ marginTop: "2rem" }}>
+      <div className="container" style={{ marginTop: "8rem" }}>
         <h1 className="text-center">My dashboard</h1>
         <FlashcardList />
       </div>

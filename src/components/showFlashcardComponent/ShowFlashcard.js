@@ -23,7 +23,7 @@ export default class ShowFlashcard extends Component {
 
   render() {
     return (
-      <div style={{ marginTop: "2rem" }} className="container">
+      <div style={{ marginTop: "8rem" }} className="container">
         <div className="row">
           <div className="jumbotron col-12">
             <h1 className="display-3">{this.state.title}</h1>
