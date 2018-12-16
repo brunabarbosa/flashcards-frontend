@@ -1,17 +1,12 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import FlashcardList from "../flahcardsList/FlashcardList";
 
 class Dashboard extends Component {
   render() {
-    const { isAuthenticated, login } = this.props.auth;
     return (
-      <div>
-        <h1>Home</h1>
-        {isAuthenticated() ? (
-          <Link to="/profile">View profile</Link>
-        ) : (
-          <button onClick={login}>login</button>
-        )}
+      <div className="container" style={{ marginTop: "2rem" }}>
+        <h1 className="text-center">My dashboard</h1>
+        <FlashcardList />
       </div>
     );
   }

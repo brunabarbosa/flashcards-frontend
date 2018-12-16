@@ -2,14 +2,15 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import * as serviceWorker from "./serviceWorker";
 import "semantic-ui-css/semantic.min.css";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 ReactDOM.render(
-  <Router>
-    <Route component={App} />
-  </Router>,
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
   document.getElementById("root")
 );
 
