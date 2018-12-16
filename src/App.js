@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Dashboard from "./components/dashboardComponent/Dashboard";
-import { Route } from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
 
 import "./App.css";
 import Nav from "./components/navComponent/Nav";
@@ -29,7 +29,16 @@ class App extends Component {
             path="/callback"
             render={props => <Callback auth={this.auth} {...props} />}
           />
-          <Route path="/profile" component={Profile} />
+          <Route
+            path="/profile"
+            render={props =>
+              this.auth.isAuthenticated() ? (
+                <Profile auth={this.auth} {...props} />
+              ) : (
+                <Redirect to="/" />
+              )
+            }
+          />
         </div>
       </>
     );
