@@ -1,23 +1,19 @@
-import React, { Component } from 'react';
-import {
-  Container,
-  Header,
-  Divider,
-} from 'semantic-ui-react';
-import FlashcardList from '../flahcardsList/FlashcardList';
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class Dashboard extends Component {
   render() {
+    const { isAuthenticated, login } = this.props.auth;
     return (
-      <div className="Dashboard-content">
-        <Container text textAlign="center" style={{ marginTop: '5em' }}>
-          <Header as='h1' textAlign='center'>Dashboard</Header>
-        </Container>
-        <Divider />
-        <FlashcardList />
-
+      <div>
+        <h1>Home</h1>
+        {isAuthenticated() ? (
+          <Link to="/profile">View profile</Link>
+        ) : (
+          <button onClick={login}>login</button>
+        )}
       </div>
-    )
+    );
   }
 }
 

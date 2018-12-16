@@ -69,7 +69,7 @@ class FlashcardForm extends Component {
 							</Form.Field>
 							<Form.Field>
 							<label>Title</label>
-								<input 
+								<textarea 
 									type='text' 
 									name='text' 
 									value={this.state.text} 

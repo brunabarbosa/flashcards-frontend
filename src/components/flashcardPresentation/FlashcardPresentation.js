@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, Icon, Button } from 'semantic-ui-react'
+import { Card, Icon, Button, Container } from 'semantic-ui-react'
 
 class FlashcardPresentation extends Component {
 
@@ -18,7 +18,13 @@ class FlashcardPresentation extends Component {
       <div>
         <Card>
           <Card.Content header={this.props.title} />
-          <Card.Content description={this.props.body} />
+            <Card.Content>
+            <Container fluid>
+              <span>
+                {this.props.body}
+              </span>
+            </Container>
+            </Card.Content>
           <Card.Content extra>
             <Button.Group icon>
               <Button basic color='blue'>

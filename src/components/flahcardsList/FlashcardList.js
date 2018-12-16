@@ -41,7 +41,7 @@ class FlashcardList extends Component {
     return (
       <div>
         <Container>
-          <Grid>
+          <Grid >
             {this.state.flashcardList.map(flashcardItem =>
               <Grid.Column key={flashcardItem._id} mobile={16} tablet={8} computer={4}>
                   <FlashcardPresentation
