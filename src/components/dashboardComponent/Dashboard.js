@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import FlashcardList from "../flahcardsList/FlashcardList";
+import FlashcardList from "../flahcardsListComponent/FlashcardList";
 import { Link } from "react-router-dom";
 
 class Dashboard extends Component {

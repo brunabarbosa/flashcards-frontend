@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import FlashcardPresentation from "../flashcardPresentation/FlashcardPresentation";
+import FlashcardPresentation from "../flashcardPresentationComponent/FlashcardPresentation";
 
 class FlashcardList extends Component {
   constructor(props) {
