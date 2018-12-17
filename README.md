@@ -8,7 +8,10 @@ mais eficiente. Neste App voce pode manter seus estudos organizados atraves de f
 
 ## Para rodar
 `npm install`  
-`npm start`  
+`npm start`
+
+## Para testar
+`npm test`  
 
 O codigo do servidor esta disponivel [AQUI](https://github.com/brunabarbosa/flashcards-backend). 
 
