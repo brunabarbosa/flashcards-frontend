@@ -9,12 +9,26 @@ class FlashcardList extends Component {
     this.state = {
       flashcards: null
     };
+
+    this.handleFlashcardDelete = this.handleFlashcardDelete.bind(this);
   }
+
   async componentDidMount() {
     const flashcards = (await axios.get("http://localhost:5000/flashcards"))
       .data;
 
     this.setState({ flashcards });
+  }
+
+  handleFlashcardDelete(flashcardId) {
+    const deleteFlashcard = item => item._id !== flashcardId;
+    const updatedList = this.state.flashcards.filter(deleteFlashcard);
+
+    axios
+      .delete(`http://localhost:5000/flashcards/${flashcardId}`)
+      .then(res => {
+        this.setState({ flashcards: updatedList });
+      });
   }
 
   render() {
@@ -29,6 +43,7 @@ class FlashcardList extends Component {
                 objectId={flashcard._id}
                 title={flashcard.title}
                 body={flashcard.text}
+                onFlashcardDelete={this.handleFlashcardDelete}
               />
             ))}
         </div>

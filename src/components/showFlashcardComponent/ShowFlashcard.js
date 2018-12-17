@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 export default class ShowFlashcard extends Component {
   constructor(props) {
@@ -18,7 +19,10 @@ export default class ShowFlashcard extends Component {
     const flashcard = (await axios.get(
       `http://localhost:5000/flashcards/${params.objectId}`
     )).data;
-    this.setState({ title: flashcard.title, text: flashcard.text });
+    this.setState({
+      title: flashcard.title,
+      text: flashcard.text
+    });
   }
 
   render() {
@@ -31,6 +35,14 @@ export default class ShowFlashcard extends Component {
             <p>{this.state.text}</p>
           </div>
         </div>
+        <Link to="/" style={{ textDecoration: "none" }}>
+          <button
+            type="button"
+            className="btn btn btn-outline-primary btn-lg btn-block"
+          >
+            Return home
+          </button>
+        </Link>
       </div>
     );
   }
