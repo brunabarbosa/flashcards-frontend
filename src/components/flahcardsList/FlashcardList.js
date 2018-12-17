@@ -14,8 +14,9 @@ class FlashcardList extends Component {
   }
 
   async componentDidMount() {
-    const flashcards = (await axios.get("http://localhost:5000/flashcards"))
-      .data;
+    const flashcards = (await axios.get(
+      "https://protected-gorge-19021.herokuapp.com/flashcards/"
+    )).data;
 
     this.setState({ flashcards });
   }
@@ -25,7 +26,9 @@ class FlashcardList extends Component {
     const updatedList = this.state.flashcards.filter(deleteFlashcard);
 
     axios
-      .delete(`http://localhost:5000/flashcards/${flashcardId}`)
+      .delete(
+        `https://protected-gorge-19021.herokuapp.com/flashcards/${flashcardId}`
+      )
       .then(res => {
         this.setState({ flashcards: updatedList });
       });

@@ -33,7 +33,7 @@ class CreateFlashcard extends Component {
       });
 
       await axios.post(
-        "http://localhost:5000/flashcards",
+        "https://protected-gorge-19021.herokuapp.com/flashcards/",
         {
           title: this.state.title,
           text: this.state.text

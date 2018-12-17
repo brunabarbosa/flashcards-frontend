@@ -17,7 +17,9 @@ export default class ShowFlashcard extends Component {
       match: { params }
     } = this.props;
     const flashcard = (await axios.get(
-      `http://localhost:5000/flashcards/${params.objectId}`
+      `https://protected-gorge-19021.herokuapp.com/flashcards/${
+        params.objectId
+      }`
     )).data;
     this.setState({
       title: flashcard.title,
