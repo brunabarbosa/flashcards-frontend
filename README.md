@@ -12,5 +12,7 @@ mais eficiente. Neste App voce pode manter seus estudos organizados atraves de f
 
 O codigo do servidor esta disponivel [AQUI](https://github.com/brunabarbosa/flashcards-backend). O servidor esta hospedado no heroku para facilitar a execução do frontend. 
 
+Então para rodar o app é necessario apenas instalar as dependencias com  `npm instal` e executar o codigo com `npm start`.  
+
 É necessário estar autenticado para postar flashcards.
 
